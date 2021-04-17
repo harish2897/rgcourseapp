@@ -7,27 +7,28 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from '../components/Reuseable/HeroSection'
 import Infoblock from '../components/Reuseable/infoblock'
-import DualInfoblock from '../components/Reuseable/DualInfoblock'
-import Teamphotosection from '../components/About/Teamphotosection'
+import Contact from "../components/Contact/contact"
 
-const AboutPage = ({data}) => (
+
+const ContactPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <HeroSection
     img={data.img.childImageSharp.fluid}  
-    title="About LearnCode Online "
+    title="Contact Us "
     subtitle=""
     heroclass="about-background"/>
-    <DualInfoblock heading="A message from CEO"/>
-    <Infoblock heading="About Vision"/>
-    <Teamphotosection/>
+  
+    <Infoblock heading="How can we help?"/>
+    <Contact/>
+   
     
   </Layout>
 )
 
 export const query = graphql`
 {
-	img: file(relativePath: {eq: "about.png"}){
+	img: file(relativePath: {eq: "contact.png"}){
 			childImageSharp {
 				fluid {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -37,4 +38,4 @@ export const query = graphql`
 }
 `
 
-export default AboutPage
+export default ContactPage
